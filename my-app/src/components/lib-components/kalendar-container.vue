@@ -140,7 +140,7 @@
             </div>
         </portal>
         <portal to="event-details" class="slotable">
-            <div slot-scope="information" class="created-event">
+            <div slot-scope="information" class="created-event" @click="hoge">
                 <slot name="created-card" :event_information="information">
                     <h4 style="margin-bottom: 5px">{{ information.data }}</h4>
                     <p>
@@ -309,6 +309,9 @@ export default {
         return provider;
     },
     methods: {
+        hoge() {
+            alert(111111)
+        },
         getTime,
         changeDay(numDays) {
             this.current_day = addDays(this.current_day, numDays).toISOString();
